@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.List;
 
 public class FPExercises {
@@ -35,6 +36,10 @@ public class FPExercises {
         //Exercises six
         courses.stream().
             map(course->course.length()).forEach(System.out::println);
+
+        courses.stream().sorted(Comparator.naturalOrder()).forEach(System.out::println);
+        courses.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+        courses.stream().sorted(Comparator.comparing(str->str.length())).forEach(System.out::println);
 
     }
     private static void printOddNumbersInListFunctional(List<Integer> numbers) {

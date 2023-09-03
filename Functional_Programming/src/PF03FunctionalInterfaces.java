@@ -66,7 +66,7 @@ public class PF03FunctionalInterfaces {
         System.out.println("BINARY-OPERATOR");
         //Exercise 12;
         /*
-        * BINARYOPERATOR.- Received 2 arguments and return one integer
+        * BINARYOPERATOR.- Received 1 arguments and return one integer
         * */
         BinaryOperator<Integer> sumBinaryOperator=Integer::sum;
 
@@ -81,6 +81,11 @@ public class PF03FunctionalInterfaces {
         numbers
                 .stream()
                 .reduce(0, sumBinaryOperator2);
+
+        BinaryOperator<String> result=(number1, number2)->{
+            return number1+number2;
+        };
+        System.out.println(result.apply("Hola","mundo"));
 
         //System.out.println(numbers);
 
@@ -114,5 +119,67 @@ public class PF03FunctionalInterfaces {
         *
         * Function can have a different type of input and output. UnaryOperator should have the same type.
         * */
+
+        /*---------------------------------------------------------------------------------------------------------*/
+        System.out.println("BIPREDICATE");
+        /*
+         * BIPREDICATE.- two arguments return boolean
+         * */
+        BiPredicate<Integer, String> biPredicate=(number, str)-> {
+          return  number>10 &&  str.length()>5;
+        };
+        System.out.println(biPredicate.test(10,"Hugo"));
+
+        /*---------------------------------------------------------------------------------------------------------*/
+        System.out.println("BIFUNCTION");
+        /*
+         * BIFUNCTION.- THREE arguments, the LAST ARGUMENT it's the type argument return
+         * */
+
+        //one example.- return boolean
+        BiFunction<Integer,String,Boolean> biFunction=(number,str)->{
+            return  number>10 &&  str.length()>5;
+        };
+
+        //two example.- return string
+        BiFunction<Integer,String,String> biFunction2=(number,str)->{
+            return  number+" "+str;
+        };
+
+        System.out.println(biFunction.apply(15,"Hugo"));
+        System.out.println(biFunction2.apply(15,"Hugo"));
+
+        /*---------------------------------------------------------------------------------------------------------*/
+        System.out.println("IntBinaryOperator");
+        /*
+         * IntBinaryOperator.- 2 arguments, the LAST n
+         * */
+
+
+        IntBinaryOperator intBinaryOperator=(primitiveNumber,primitiveNumber2)->primitiveNumber+primitiveNumber2;
+        System.out.println(intBinaryOperator.applyAsInt(10,10));
+
+        /*
+        Next functional interfaces it's used to work with primitive types
+        */
+        //IntBinaryOperator
+        //IntConsumer
+        //IntFunction
+        //IntPredicate
+        //IntSupplier
+        //IntToDoubleFunction
+        //IntToLongFunction
+        //IntUnaryOperator
     }
 }
+
+
+
+
+
+
+
+
+
+
+

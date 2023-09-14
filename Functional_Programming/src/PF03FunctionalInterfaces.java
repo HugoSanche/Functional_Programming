@@ -27,10 +27,11 @@ public class PF03FunctionalInterfaces {
             }
         };
 
+        numbers.stream().filter(number->number>10).forEach(System.out::println);
 
         /*---------------------------------------------------------------------------------------------------------*/
         System.out.println("FUNCTION");
-        /*FUNCTION.-Received one argument a return a Integer */
+        /*FUNCTION.-Received one argument a return a value it's the second parameter */
         Function<Integer, Integer> squareFunction = x -> x * x;
 
         //Function interface

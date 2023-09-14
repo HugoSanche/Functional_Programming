@@ -60,12 +60,13 @@ public class PF04CustomClass {
                                 .sorted(comparingByNoStudentsDecreasing)
                                 .collect(Collectors.toList())
                         );
-        Comparator<Course> comparingByNoStudentsAndReviewScoreIncreasing =Comparator.comparingInt(Course::getNoOfStudents).thenComparing(Course::getReviewScore);
+        Comparator<Course> comparingByNoStudentsAndReviewScore =Comparator.comparingInt(Course::getNoOfStudents).thenComparing(Course::getReviewScore);
 
         //sorted by review score
+        System.out.println("comparingByNoStudentsAndReviewScore");
         System.out.println(
         courses.stream()
-                .sorted(comparingByNoStudentsAndReviewScoreIncreasing)
+                .sorted(comparingByNoStudentsAndReviewScore)
                 .collect(Collectors.toList())
         );
         //[FullStack:14000:91, Spring Boot:18000:95, Kubernetes:20000:91, Docker:20000:92, Spring:20000:98, AWS:21000:92, Azure:21000:99, API:22000:97, Microservices:25000:96]
@@ -74,7 +75,7 @@ public class PF04CustomClass {
         System.out.println("Filter");
         System.out.println(
                 courses.stream()
-                        .sorted(comparingByNoStudentsAndReviewScoreIncreasing)
+                        .sorted(comparingByNoStudentsAndReviewScore)
                         .limit(5) //only first 5 registers
                         .skip(3)
                         .collect(Collectors.toList())
@@ -84,7 +85,7 @@ public class PF04CustomClass {
         System.out.println("Skip");
         System.out.println(
                 courses.stream()
-                        .sorted(comparingByNoStudentsAndReviewScoreIncreasing)
+                        .sorted(comparingByNoStudentsAndReviewScore)
                         .limit(5)
                         .skip(3) //exclude first three registers
                         .collect(Collectors.toList())

@@ -67,7 +67,7 @@ public class PF03FunctionalInterfaces {
         System.out.println("BINARY-OPERATOR");
         //Exercise 12;
         /*
-        * BINARYOPERATOR.- Received 2 arguments and return one integer
+        * BINARYOPERATOR.- Received 2 arguments and return one value
         * */
         BinaryOperator<Integer> sumBinaryOperator=Integer::sum;
 
@@ -78,15 +78,15 @@ public class PF03FunctionalInterfaces {
                 return x+y;
             }
         };
-
+        System.out.println(
         numbers
                 .stream()
-                .reduce(0, sumBinaryOperator2);
-
-        BinaryOperator<String> result=(number1, number2)->{
-            return number1+number2;
+                .reduce(0, sumBinaryOperator2)
+        );
+        BinaryOperator<String> result=(string1, string2)->{
+            return string1+string2;
         };
-        System.out.println(result.apply("Hola","mundo"));
+        System.out.println(result.apply("Hola ","mundo"));
 
         //System.out.println(numbers);
 

@@ -78,11 +78,14 @@ public class PF03FunctionalInterfaces {
                 return x+y;
             }
         };
+        System.out.println("REDUCE");
         System.out.println(
         numbers
                 .stream()
                 .reduce(0, sumBinaryOperator2)
         );
+
+
         BinaryOperator<String> result=(string1, string2)->{
             return string1+string2;
         };

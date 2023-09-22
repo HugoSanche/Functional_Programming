@@ -1,6 +1,8 @@
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+//IntStream.range()
+//IntStream.iterate
 public class PF04CustomClass_F {
     public static void main(String[] args) {
         //not add the sum of number 10

@@ -2,7 +2,7 @@ import java.util.function.Predicate;
 
 public class HigherOrderFunctions {
 
-    //A method return a method
+    //Returning a method from a method
     public static void main(String[] args) {
 
 

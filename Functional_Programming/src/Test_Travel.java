@@ -58,6 +58,7 @@ public class Test_Travel {
 //                .forEach(travel-> System.out.println(travel.getPais()));
 
         list.stream()
+                .peek(x-> System.out.println(x.getName()))
                 .map(persona -> persona.getTravels())
                 .flatMap(travel ->travel.stream() )
                 .map(travel->travel.getPais())

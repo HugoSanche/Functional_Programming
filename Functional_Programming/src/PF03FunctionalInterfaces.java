@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 public class PF03FunctionalInterfaces {
     /*
@@ -41,6 +42,10 @@ public class PF03FunctionalInterfaces {
                 return x*x;
             }
         };
+
+        System.out.println(
+        numbers.stream().map(x->x+2).collect(Collectors.toList())
+        );
 
         /*---------------------------------------------------------------------------------------------------------*/
         System.out.println("CONSUMER");
